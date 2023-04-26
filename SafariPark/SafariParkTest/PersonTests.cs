@@ -35,10 +35,10 @@ namespace SafariParkTest
         [TestCase(99, 99)]
         [TestCase( 0, 0)]
         [TestCase(35, 35)] 
-        [TestCase(-1, -1)]
-        [TestCase(100, 100)]
-        [TestCase(15, 25)]
-        [TestCase(15, -1)]
+        [TestCase(-1, -1)] //expected fail
+        [TestCase(100, 100)] //expected fail
+        [TestCase(15, 25)] //expected fail
+        [TestCase(15, -1)] //expected fail
 
         public void GetAgeTest(int age, int expected)
         {
