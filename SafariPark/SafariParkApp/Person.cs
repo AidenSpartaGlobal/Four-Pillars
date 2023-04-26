@@ -18,7 +18,7 @@ namespace SafariParkApp
             {
                 if(value < 0 || value > 99)
                 {
-                    throw new ArgumentException();
+                    throw new ArgumentException("Out of Range");
                 }
                 _age = value;          
             } 
