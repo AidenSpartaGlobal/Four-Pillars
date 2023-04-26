@@ -8,8 +8,8 @@ namespace SafariParkApp
 {
     public class Person
     {
-        public string FirstName { get; private set; } = "";
-        public string LastName { get; private set; } = "";
+        public string FirstName { get; init; } = "";
+        public string LastName { get; init; } = "";
         private int _age;
         public int Age 
         {
@@ -23,6 +23,8 @@ namespace SafariParkApp
                 _age = value;          
             } 
         }
+
+        public Person() { }
 
         public Person(string firstName, string lastName, int age = 0)
         {
