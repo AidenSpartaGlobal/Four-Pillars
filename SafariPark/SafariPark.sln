@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SafariParkApp", "SafariParkApp\SafariParkApp.csproj", "{ABABDDAB-01A1-4896-BF38-D9418FEA330E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SafariParkApp", "SafariParkApp\SafariParkApp.csproj", "{ABABDDAB-01A1-4896-BF38-D9418FEA330E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SafariParkTest", "SafariParkTest\SafariParkTest.csproj", "{9862C990-B83E-413F-923A-67E022B82A43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SafariParkTest", "SafariParkTest\SafariParkTest.csproj", "{9862C990-B83E-413F-923A-67E022B82A43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleTest", "VehicleTest\VehicleTest.csproj", "{68FB7BA3-4D20-4B30-AA1E-E0EBCA83C651}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{9862C990-B83E-413F-923A-67E022B82A43}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9862C990-B83E-413F-923A-67E022B82A43}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9862C990-B83E-413F-923A-67E022B82A43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68FB7BA3-4D20-4B30-AA1E-E0EBCA83C651}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68FB7BA3-4D20-4B30-AA1E-E0EBCA83C651}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68FB7BA3-4D20-4B30-AA1E-E0EBCA83C651}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68FB7BA3-4D20-4B30-AA1E-E0EBCA83C651}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
