@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SafariParkApp
+namespace SafariParkApp 
 {
-    public class Vehicle
+    public class Vehicle : iMoveable
     {
         private int _capacity;
         private int _numPassengers;

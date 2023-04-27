@@ -1,6 +1,6 @@
 ﻿namespace SafariParkApp
 {
-    public class Program
+    public class Program 
     {
         //static void Main(string[] args)
         //{
@@ -37,6 +37,20 @@
 
         static void Main(string[] args)
         {
+            Camera pentax = new Camera("Pentax");
+            WaterPistol pistol = new WaterPistol("Supersoaker");
+            LaserGun laserGun = new LaserGun("Acme");
+            Hunter nish = new Hunter("Nish", "Mandal", pentax);
+            Console.WriteLine(nish.Shoot());
+            nish.Shooter = pistol;
+            Console.WriteLine(nish.Shoot());
+            nish.Shooter = laserGun;
+            Console.WriteLine(nish.Shoot());
+            nish.Shooter = pistol;
+            Console.WriteLine(nish.Shoot());
+
+
+
             //Hunter h = new Hunter("Marion", "Jones", "Leica") { Age = 32};
             ////Console.WriteLine(h.Age);
             ////Console.WriteLine(h.Shoot());
@@ -50,8 +64,8 @@
             //Rect
             //var rect = new Rectangle(3, 4);
             //Console.WriteLine(rect);
-            
- //------------------------------Airplane------------------------------------------------------
+
+            //------------------------------Airplane------------------------------------------------------
             //Airplane
             //Airplane a = new Airplane(200, 100, "JetsRUs")
             //{ NumPassengers = 150 };
@@ -63,32 +77,60 @@
             //a.Move();
             //Console.WriteLine(a);
 
- //------------------------------Polymorphism------------------------------------------------------
+            //------------------------------Polymorphism------------------------------------------------------
 
-            List<Object> gameObjects = new List<Object>()
-            {
-                new Person ("Cathy", "French"),
-                new Hunter ("Stephano", "Naresso", "Iphone13")
-            };
-            foreach (var gameObj in gameObjects)
-            {
-                Console.WriteLine(gameObj);
-            }
+            //            List<Object> gameObjects = new List<Object>()
+            //            {
+            //                new Person ("Cathy", "French"),
+            //                new Hunter ("Stephano", "Naresso", "Iphone13")
+            //            };
+            //            foreach (var gameObj in gameObjects)
+            //            {
+            //                Console.WriteLine(gameObj);
+            //            }
 
-            Person yolondo = new Person("Yolondo", "Young");
-            SpartaWrite(yolondo);
+            //            Person yolondo = new Person("Yolondo", "Young");
+            //            SpartaWrite(yolondo);
+            ////--------------------------------------------------------------------------------------------
+
+            //            List<iMoveable> PeopleWalk = new List<iMoveable>()
+            //            {
+            //                new Person("A", "B"),
+            //                new Vehicle(100, 10)
+            //            };
+
+            //            foreach (var moveable in PeopleWalk)
+            //            {
+            //                Console.WriteLine(moveable.Move(5));
+            //            }
+
+            //List<IShootable> Guns = new List<IShootable>()
+            //{
+            //    new LaserGun("H&K"),
+            //    new WaterPistol("Glock"),
+            //    new Hunter("A", "B", new WaterPistol("Volkite")),
+            //    new Hunter("D", "E", new LaserGun("LasGun")),
+            //    new Camera("Cannon")
+            //};
+
+            //foreach (var shoota in Guns)
+            //{
+            //    Console.WriteLine(shoota.Shoot());
+            //}
+
         }
 
 
-        public static void SpartaWrite(Object obj)
-        {
-            Console.WriteLine(obj.ToString());
-            if (obj is Hunter)
-            {
-                var hunterObj = (Hunter)obj;
-                Console.WriteLine(hunterObj.Shoot);
-            }
-        }
+        //public static void SpartaWrite(Object obj)
+        //{
+        //    Console.WriteLine(obj.ToString());
+        //    if (obj is Hunter)
+        //    {
+        //        var hunterObj = (Hunter)obj;
+        //        Console.WriteLine(hunterObj.Shoot);
+        //    }
+        //}
+//--------------------------------------------------------------------------------------------
 
     }
 }

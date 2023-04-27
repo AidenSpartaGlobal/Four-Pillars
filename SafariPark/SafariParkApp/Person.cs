@@ -6,11 +6,16 @@ using System.Threading.Tasks;
 
 namespace SafariParkApp
 {
-    public class Person
+    public class Person : iMoveable
     {
         public string FirstName { get; init; } = "";
         public string LastName { get; init; } = "";
         private int _age;
+
+              public int Position { get; set; }
+        public int Speed { get; init; }
+
+
         public int Age 
         {
             get { return _age; }
@@ -51,6 +56,18 @@ namespace SafariParkApp
         {
             return $"{base.ToString()} Name: {GetFullName()} Age : {Age}";
            
+        }
+
+        public virtual string Move()
+        {
+            Position += Speed;
+            return "Walking at";
+        }
+
+        public virtual string Move(int times)
+        {
+            Position += Speed * times;
+            return $"Walking at {times} times";
         }
     }
 }
