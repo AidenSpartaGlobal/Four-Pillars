@@ -11,34 +11,44 @@ namespace SafariParkApp
         private int _capacity;
         private int _numPassengers;
 
-        public int NumPassengers {
+        public int NumPassengers 
+        {
             get { return _numPassengers; }
-            set { if (value < 0 && value > _capacity) throw new ArgumentException(); } }
+            set { if (value < 0 || value > _capacity) throw new ArgumentException();
+                _numPassengers = value;
+            } 
+        }
 
         public int Position { get; set; }
-        public int Speed { get; init; } = 10;
+        public int Speed { get; init; }
 
-        public string Move()
+        public virtual string Move()
         {
-            Position = Speed * 1;
+            Position += Speed;
             return "Moving along";
         }
 
-        public string Move(int x)
+        public virtual string Move(int times)
         {
-            Position = Speed * x;
-            return $"Moving along {x} times";
+            Position += Speed * times;
+            return $"Moving along {times} times";
         }
 
         public Vehicle() 
-        { 
-
+        {
+           
         }
 
         public Vehicle(int capacity, int speed = 10)
         {
             _capacity = capacity;
             Speed = speed;
+        }
+
+        public override string ToString()
+        {
+            return  base.ToString() + $" capacity: {_capacity} passengers: {_numPassengers} speed: {Speed} position: {Position}";
+            //return $"{_capacity}" ;
         }
     }
 }
