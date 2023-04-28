@@ -37,19 +37,58 @@
 
         static void Main(string[] args)
         {
-            Camera pentax = new Camera("Pentax");
-            WaterPistol pistol = new WaterPistol("Supersoaker");
-            LaserGun laserGun = new LaserGun("Acme");
-            Hunter nish = new Hunter("Nish", "Mandal", pentax);
-            Console.WriteLine(nish.Shoot());
-            nish.Shooter = pistol;
-            Console.WriteLine(nish.Shoot());
-            nish.Shooter = laserGun;
-            Console.WriteLine(nish.Shoot());
-            nish.Shooter = pistol;
-            Console.WriteLine(nish.Shoot());
+            var robOne = new Person("Robert", "Sponge") { Age = 20 };
+            var robTwo = robOne;
+            var areSame = robOne.Equals(robTwo); // True
+
+            var robThree = new Person("Robert", "Sponge") { Age = 20 };
+            var areSameOneThree = robOne.Equals(robThree); // false
+
+            List<Person> personList =
+                new List<Person>
+                {
+                    new Person("Bobert", "Sponge"),
+
+                    new Person("Sandy", "Cheeks") { Age = 25},
+
+                    new Person("Robert", "Sponge"),
+
+                    new Person("Squilliam", "Squad") { Age = 32}
+                };
+            foreach (var person in personList)
+            {
+                Console.WriteLine(person);
+            }
+
+            var hasRob = personList.Contains(robOne);
+            var equals = robOne == robThree;
+            var notEquals = robOne != robThree;
+
+            personList.Sort();
 
 
+             var robfour = new Person("A", "B");
+             var robfive = new Person("C", "D");
+             var isSame = robfour.CompareTo(robfive);
+            Console.WriteLine(isSame);
+
+
+
+
+            //------------------------------Shoot------------------------------------------------------
+            //Camera pentax = new Camera("Pentax");
+            //WaterPistol pistol = new WaterPistol("Supersoaker");
+            //LaserGun laserGun = new LaserGun("Acme");
+            //Hunter nish = new Hunter("Nish", "Mandal", pentax);
+            //Console.WriteLine(nish.Shoot());
+            //nish.Shooter = pistol;
+            //Console.WriteLine(nish.Shoot());
+            //nish.Shooter = laserGun;
+            //Console.WriteLine(nish.Shoot());
+            //nish.Shooter = pistol;
+            //Console.WriteLine(nish.Shoot());
+
+            //------------------------------------------------------------------------------------
 
             //Hunter h = new Hunter("Marion", "Jones", "Leica") { Age = 32};
             ////Console.WriteLine(h.Age);
@@ -130,7 +169,7 @@
         //        Console.WriteLine(hunterObj.Shoot);
         //    }
         //}
-//--------------------------------------------------------------------------------------------
+        //--------------------------------------------------------------------------------------------
 
     }
 }

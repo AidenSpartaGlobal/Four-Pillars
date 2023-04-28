@@ -11,20 +11,17 @@ namespace SafariParkApp
 
         public Weapon(string brand)
         {
-            this._brand = brand;
+            _brand = brand;
         }
 
         public virtual string Shoot()
         {
-            return $"{this.GetType()}";
+            return $"{this.ToString()}";
         }
 
         public override string ToString()
         {
             return $"Shooting a {base.ToString()} - {_brand}";
         }
-
-
-
     }
 }

@@ -6,8 +6,21 @@ using System.Threading.Tasks;
 
 namespace SafariParkApp
 {
-    public class Person : iMoveable
+    public class Person : iMoveable, IEquatable<Person?>, IComparable<Person>
     {
+        public int CompareTo(Person? Other)
+        {
+            if (Other == null) return 1;
+            if (LastName != Other.LastName)
+            {
+                return LastName.CompareTo(Other.LastName);
+            }
+            else if (FirstName != Other.FirstName)
+            {
+                return FirstName.CompareTo(Other.FirstName);
+            }
+            else { return Age.CompareTo(Other.Age); } 
+        }
         public string FirstName { get; init; } = "";
         public string LastName { get; init; } = "";
         private int _age;
@@ -68,6 +81,37 @@ namespace SafariParkApp
         {
             Position += Speed * times;
             return $"Walking at {times} times";
+        }
+
+        public override bool Equals(object? obj)
+        {
+            return Equals(obj as Person);
+        }
+
+        public bool Equals(Person? other)
+        {
+            return other is not null &&
+                   FirstName == other.FirstName &&
+                   LastName == other.LastName &&
+                   _age == other._age &&
+                   Position == other.Position &&
+                   Speed == other.Speed &&
+                   Age == other.Age;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(FirstName, LastName, _age, Position, Speed, Age);
+        }
+
+        public static bool operator == (Person left, Person right)
+        {
+            return EqualityComparer<Person>.Default.Equals(left, right);
+        }
+
+        public static bool operator != (Person left, Person right)
+        {
+            return !(left == right);
         }
     }
 }

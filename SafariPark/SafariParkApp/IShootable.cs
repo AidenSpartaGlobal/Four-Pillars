@@ -7,9 +7,6 @@ namespace SafariParkApp
 {
     public interface IShootable 
     {
-        public string Shoot()
-        {
-            return "Bam";
-        }
+        public string Shoot();
     }
 }

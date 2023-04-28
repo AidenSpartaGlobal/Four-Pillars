@@ -11,13 +11,12 @@ namespace SafariParkApp
 
         public Camera (string brand)
         {
-            this._brand = brand;
+            _brand = brand;
         }
 
         public string Shoot()
         {
-            return $"Shooting a {base.GetType()} " +
-                   $"- {_brand}";
+            return $"Shooting a {base.ToString()} - {_brand}";
         }
 
 

@@ -25,8 +25,5 @@ namespace SafariParkApp
         {
             return $"{base.ToString()} Camera: {Shooter}";
         }
-
-
-
     }
 }

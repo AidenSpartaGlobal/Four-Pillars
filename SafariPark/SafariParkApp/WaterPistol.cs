@@ -11,8 +11,6 @@ namespace SafariParkApp
         {
 
         }
-
-
         public override string Shoot()
         {
             return $"Sssppsshhh!! {base.ToString()} ";
