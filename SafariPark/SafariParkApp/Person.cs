@@ -34,7 +34,7 @@ namespace SafariParkApp
             get { return _age; }
             set 
             {
-                if(value < 0 || value > 99)
+                if(value < 0 || value > 999)
                 {
                     throw new ArgumentException("Out of Range");
                 }
