@@ -18,7 +18,17 @@ namespace Collections_Lib
         // returns a list of all the strings in sourceList that start with the letter 'A' or 'a'
         public static List<string> MakeAList(List<string> sourceList)
         {
-            throw new NotImplementedException();
+            List<string> capAList = new List<string>();
+
+           foreach(string caps in sourceList)
+            {
+                if (caps.StartsWith("a") || caps.StartsWith("A"))
+                {
+                    capAList.Add(caps);
+                }
+            }return capAList;
+
+            //throw new NotImplementedException();
         }
     }
 }
