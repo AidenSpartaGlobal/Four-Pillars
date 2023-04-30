@@ -15,13 +15,13 @@ namespace Collections_Lib
             {
                 if(queue.Count > 0)
                 {
-                    result = queue.Dequeue();
+                    string name = queue.Dequeue();
+                    result += name;
                     if (i < num - 1)
                     {
-                        result += " , ";
+                        result += ", ";
                     }
-                }
-              
+                }             
             }
             return result;
         }
