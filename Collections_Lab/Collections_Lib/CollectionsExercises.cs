@@ -50,31 +50,30 @@ namespace Collections_Lib
             //go through string
             //find numbers 0 -9, count them
             //return the number and count as a string
+            string result = "";
+            Dictionary<char, int> countDict = new Dictionary<char, int>();
 
-            //Dictionary<char, int> countDict = new Dictionary<char, int>();
+            foreach (var c in input)
+            {
+                if (Char.IsDigit(c))
+                {
+                    if (countDict.ContainsKey(c))
+                    {
+                        countDict[c]++;
+                    }
+                    else
+                    {
+                        countDict.Add(c, 1);
+                    }
+                }
+            }
+            foreach (var entry in countDict)
+            {  
+                result += $"[{entry.Key}, {entry.Value}]";
+            }
+            return result;
 
-            //foreach(var c in input)
-            //{
-            //    if (Char.IsDigit(c))
-            //    {
-            //        if (countDict.ContainsKey(c))
-            //        {
-            //            countDict[c]++;
-            //        }
-            //        else
-            //        {
-            //            countDict.Add(c, 1);
-            //        }
-            //    }
-            //}
-            //foreach( var entry in countDict)
-            //{
-
-            //    Console.WriteLine($"[{entry.Key}, {entry.Value}]");
-            //}
-            //return $"[{entry.Key}, {entry.Value}]";
-
-            throw new NotImplementedException();
+          
 
             //foreach (char c in input)
             //{
