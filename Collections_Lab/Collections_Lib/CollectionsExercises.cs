@@ -10,20 +10,25 @@ namespace Collections_Lib
         /* removes and returns the next num entries in the queue, as a comma separated string */
         public static string NextInQueue(int num, Queue<string> queue)
         {
-            string result = "";
-            for (int i = 0; i < num; i++)
+            List<string> q = new List<string>();
+            if(num > queue.Count)
             {
-                if(queue.Count > 0)
+                for(int i =1; i < 6; i++)
                 {
-                    string name = queue.Dequeue();
-                    result += name;
-                    if (i < num - 1)
-                    {
-                        result += ", ";
-                    }
-                }             
+                    q.Add(queue.Dequeue());
+                }
+                string result = string.Join(", ", q);
+                return result;
             }
-            return result;
+            else
+            {
+                for(int i = 0; i < num; i++)
+                {
+                    q.Add(queue.Dequeue());
+                }
+                string result = string.Join(", ", q);
+                return result;
+            }
         }
 
         /* uses a Stack to create and return array of ints in reverse order to the one supplied */
